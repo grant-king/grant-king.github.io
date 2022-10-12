@@ -62,3 +62,13 @@
   border-width: 4px;
 }
 
+.btn-sm {
+  background: var(--bs-primary);
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(46,132,44);
+  border-color: #0a58ca;
+}
+
