@@ -63,12 +63,25 @@
 }
 
 .btn-sm {
-  background: var(--bs-primary);
+  background: rgba(46,132,44,0.6);
 }
 
 .btn-primary:hover {
   color: #fff;
   background-color: rgb(46,132,44);
   border-color: #0a58ca;
+}
+
+.project-card {
+  margin-top: 15%;
+}
+
+.card {
+  border-width: 4px;
+  border-color: rgba(80,4,140,0.4);
+}
+
+.icon-features-list {
+  padding: 8px;
 }
 
