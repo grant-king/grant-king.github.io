@@ -101,3 +101,18 @@
   border-color: var(--bs-primary);
 }
 
+.row {
+  margin: 11px 0px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+.project-feature-details {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(46,132,44,0.6);
+  border-right-style: solid;
+  border-right-color: rgba(80,4,140,0.4);
+}
+
