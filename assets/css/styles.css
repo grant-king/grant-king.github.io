@@ -116,3 +116,7 @@ img {
   border-right-color: rgba(80,4,140,0.4);
 }
 
+#top-area {
+  transition: height 1s;
+}
+
