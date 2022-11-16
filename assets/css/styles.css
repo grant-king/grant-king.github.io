@@ -101,10 +101,6 @@
   border-color: var(--bs-primary);
 }
 
-.row {
-  margin: 11px 0px;
-}
-
 img {
   border-radius: 8px;
 }
@@ -116,7 +112,22 @@ img {
   border-right-color: rgba(80,4,140,0.4);
 }
 
-#top-area {
-  transition: height 1s;
+.render-area {
+  min-height: 300px;
+  min-width: 300px;
+}
+
+.canvas-area {
+  border-radius: 8px;
+  border: 2px solid var(--bs-primary);
+  background-color: var(--bs-primary);
+}
+
+.render-column {
+  margin-top: 16px;
+}
+
+.project-detail-content .row {
+  margin-top: 11px;
 }
 
