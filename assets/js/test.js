@@ -1,47 +1,28 @@
-function animate_height(event){
-    const current_height_int = parseInt(event.srcElement.style.height.slice(0, -2))
-    console.log(current_height_int)
-    const element = event.srcElement
+//import * as THREE from "https://cdn.jsdelivr.net/npm/three/build/three.min.js"
+import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js"
 
-    if(current_height_int > 105){
-        const new_height_int = current_height_int - 32
-        const element_height = [
-            {height: `${current_height_int}px`},
-            {height: `${new_height_int}px`}
-        ]
-        const element_timing = {
-            duration: 1000,
-            iterations: 1,
-        }
-        const animation = element.animate(element_height, element_timing)
-        console.log(`height set: ${new_height_int}`)
-        console.dir(animation)
-    }
-    
-}
 
-function scroll_height(event){
-    const current_height_int = parseInt(event.srcElement.style.height.slice(0, -2))
-    console.log(current_height_int)
-    const element = event.srcElement
+const app = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000)
 
-    if(current_height_int > 105){
-        const new_height_int = current_height_int - 64
-        set_height(element, new_height_int)
-        console.log(`height set: ${new_height_int}`)
-        console.dir(animation)
-    }
-    
-}
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight)
+document.getElementById("top-area").appendChild(renderer.domElement)
 
-function set_height(element, new_height_int){
-    element.style.height = `${new_height_int}px`
-}
+var geometry = new THREE.BoxGeometry( 4, 4, 4);
+var material = new THREE.MeshBasicMaterial( { color: "rgb(100, 200, 10)" } );
+var cube = new THREE.Mesh( geometry, material );
+app.add( cube );
 
-console.dir(document)
+camera.position.z = 20;
 
-const element = document.getElementById('top-area')
-element.addEventListener('wheel', scroll_height)
-console.dir(element)
-element.innerHTML = '<h1>test<h1>'
-element.style.color = '#fff'
+var animate = function () {
+    requestAnimationFrame( animate );
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    renderer.render( app, camera );
+};
+
+animate();
